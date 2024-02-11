@@ -25,16 +25,33 @@ source-repository head
 
 library
   exposed-modules:
+      BibEntries
       Lib
+      ReverseFuzzy
   other-modules:
       Paths_pdfnamer
   autogen-modules:
       Paths_pdfnamer
   hs-source-dirs:
       src
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -XTemplateHaskell
   build-depends:
-      base >=4.7 && <5
+      async
+    , base >=4.7 && <5
+    , bibtex
+    , brick
+    , bytestring
+    , directory
+    , fuzzy
+    , fuzzyfind
+    , microlens
+    , microlens-mtl
+    , microlens-th
+    , parsec
+    , process
+    , split
+    , text
+    , vty
   default-language: Haskell2010
 
 executable pdfnamer-exe
@@ -45,10 +62,25 @@ executable pdfnamer-exe
       Paths_pdfnamer
   hs-source-dirs:
       app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -XTemplateHaskell -threaded -rtsopts -with-rtsopts=-N -O2
   build-depends:
-      base >=4.7 && <5
+      async
+    , base >=4.7 && <5
+    , bibtex
+    , brick
+    , bytestring
+    , directory
+    , fuzzy
+    , fuzzyfind
+    , microlens
+    , microlens-mtl
+    , microlens-th
+    , parsec
     , pdfnamer
+    , process
+    , split
+    , text
+    , vty
   default-language: Haskell2010
 
 test-suite pdfnamer-test
@@ -60,8 +92,23 @@ test-suite pdfnamer-test
       Paths_pdfnamer
   hs-source-dirs:
       test
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -XTemplateHaskell -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      async
+    , base >=4.7 && <5
+    , bibtex
+    , brick
+    , bytestring
+    , directory
+    , fuzzy
+    , fuzzyfind
+    , microlens
+    , microlens-mtl
+    , microlens-th
+    , parsec
     , pdfnamer
+    , process
+    , split
+    , text
+    , vty
   default-language: Haskell2010

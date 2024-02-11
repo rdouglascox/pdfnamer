@@ -2,5 +2,7 @@ module Lib
     ( someFunc
     ) where
 
+import ReverseFuzzy
+
 someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+someFunc = brickmain
