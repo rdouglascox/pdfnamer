@@ -37,7 +37,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -XTemplateHaskell
   build-depends:
       async
-    , base >=4.7 && <5
+    , base
     , bibtex
     , brick
     , bytestring
@@ -65,7 +65,7 @@ executable pdfnamer-exe
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -XTemplateHaskell -threaded -rtsopts -with-rtsopts=-N -O2
   build-depends:
       async
-    , base >=4.7 && <5
+    , base
     , bibtex
     , brick
     , bytestring
@@ -95,7 +95,7 @@ test-suite pdfnamer-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -XTemplateHaskell -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       async
-    , base >=4.7 && <5
+    , base
     , bibtex
     , brick
     , bytestring
